@@ -45,6 +45,10 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+.h1{
+    color: #ffffff;
+}
+
 .comment {
     margin: 20px 0px 20px 20px;
 }
