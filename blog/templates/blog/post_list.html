@@ -5,6 +5,9 @@
 <h2> post list2 </h1>
 <h3> post list staff1 <h3>
 
+<h3> post list staff2 </h4>
+
+
     {% for post in posts %}
 
         <div class="post">
@@ -20,6 +23,6 @@
 
             <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }} </a>
         </div>
-        <h1> end of the block <h1>
+       
     {% endfor %}
 {% endblock %}
