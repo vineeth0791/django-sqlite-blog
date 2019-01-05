@@ -1,0 +1,289 @@
+[33mcommit 0dd5abe7bb898f407ac2b7a9394cd260e6ad4491[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mstaff2[m[33m)[m
+Merge: b44540d 8fa47fc
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:42:02 2019 +0530
+
+    resolved conflicts
+
+[33mcommit b44540d365ad5b619f4b60a82eb29125dc135ea4[m
+Merge: 95e5cf1 6112305
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:39:26 2019 +0530
+
+    Merge pull request #13 from vineeth0791/staff
+    
+    staff2 test changes
+
+[33mcommit 8fa47fc3ae1a8a0617962a5b2910c9fb285b1c53[m[33m ([m[1;31morigin/staff2[m[33m)[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:38:31 2019 +0530
+
+    staff2 file changes by staff2
+
+[33mcommit 611230514ba2ffc0ef0c8ca291e7cb06acb91472[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:37:17 2019 +0530
+
+    staff2 test changes
+
+[33mcommit 95e5cf127e05e99fc891f8982478669ec6e223f4[m
+Merge: 303351e 33538eb
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:19:51 2019 +0530
+
+    Merge pull request #12 from vineeth0791/staff
+    
+    staff changes
+
+[33mcommit 33538eb6a7e6d7747cd156b0871395af912def03[m
+Merge: 64bc338 303351e
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:18:56 2019 +0530
+
+    resolved conflicts
+
+[33mcommit 303351e8d83f1028463f57752a521de704f4b9a8[m
+Merge: e583cd0 8d53464
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:13:54 2019 +0530
+
+    Merge pull request #11 from vineeth0791/staff2
+    
+    staff2 commits
+
+[33mcommit 64bc338b2f599691fcf1ba3e07e2987b82860e01[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:12:58 2019 +0530
+
+    staff changes
+
+[33mcommit 8d5346461203331a1497e60db89ee43fd387cfa7[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:11:23 2019 +0530
+
+    staff2 commits
+
+[33mcommit e583cd0e994036249c55976c52fc54f7ec448f0f[m
+Merge: b61f0b0 af4782d
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:01:16 2019 +0530
+
+    Merge pull request #10 from vineeth0791/staff
+    
+    Staff
+
+[33mcommit af4782d4ba9b22ac1d3f09e6991aa86fa1ad8bd2[m
+Merge: 90d3a94 b61f0b0
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 17:00:01 2019 +0530
+
+    resolved conflicts
+
+[33mcommit b61f0b08f087ae0253d71bbf030e7feba0ba7d8f[m
+Merge: 5f3ed5d acd36cb
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:58:43 2019 +0530
+
+    Merge pull request #9 from vineeth0791/staff
+    
+    staff changes
+
+[33mcommit acd36cb24c0e6f1daea412a8fb55c1d20c649966[m
+Merge: f428003 5f3ed5d
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:58:35 2019 +0530
+
+    Merge branch 'master' into staff
+
+[33mcommit 90d3a9416129df051994bd34ae07f3b30ae8b308[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:38:54 2019 +0530
+
+    staff changes
+
+[33mcommit 5f3ed5da046510f172f3f07b954ec11a3bf6428f[m
+Merge: ee8f634 79bf82e
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:40:45 2019 +0530
+
+    Merge pull request #8 from vineeth0791/staff2
+    
+    2 new changes by staff2
+
+[33mcommit f4280032e5a603b42d97012734a65715679c0995[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:38:54 2019 +0530
+
+    staff changes
+
+[33mcommit 79bf82e24c51254de9b3e05d6166aedc4dc54eee[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:37:28 2019 +0530
+
+    2 new changes by staff2
+
+[33mcommit ee8f63450e097fe1d96e94e776b663ee47ba3b2b[m
+Merge: 49e4716 f14f61d
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:35:27 2019 +0530
+
+    Merge pull request #7 from vineeth0791/staff
+    
+    staff changes
+
+[33mcommit f14f61d38ebb12a3072e125d78c2263027693b9c[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:34:37 2019 +0530
+
+    staff changes
+
+[33mcommit 49e4716aae4bd68157ba402b90d39ab48358b7d0[m
+Merge: 6725989 ea81138
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:33:46 2019 +0530
+
+    Merge pull request #6 from vineeth0791/staff2
+    
+    new changes
+
+[33mcommit ea811385e55bec26fd53a53e6e6a5b37f972484c[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:32:53 2019 +0530
+
+    new changes
+
+[33mcommit 6725989e1b6564b00bd0628c3dc8c9bd1a2d54fa[m
+Merge: 7be26f3 51f87c7
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:28:14 2019 +0530
+
+    Merge pull request #5 from vineeth0791/staff2
+    
+    new changes staff2
+
+[33mcommit 51f87c74ed45c3fad2d4a60b61fb5ed7da4cdf8b[m
+Merge: f3cf9d8 7be26f3
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:27:30 2019 +0530
+
+    conflicts have been merged
+
+[33mcommit 7be26f305aae207c482f716f746663d5f11df11a[m
+Merge: 78b5c4f 1170471
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:02:16 2019 +0530
+
+    Merge pull request #4 from vineeth0791/staff
+    
+    change in post list
+
+[33mcommit f3cf9d87e5405473987326d57eb2d381e4d43ae1[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:00:55 2019 +0530
+
+    new changes staff2
+
+[33mcommit 1170471c3f15258e9f2b40cc867b00a7054542ca[m[33m ([m[1;31morigin/staff[m[33m)[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 16:00:07 2019 +0530
+
+    change in post list
+
+[33mcommit 78b5c4f8956bb215a5261f4d72808794ccf1429b[m
+Merge: cdb12a1 994a0dc
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:57:17 2019 +0530
+
+    Merge pull request #3 from vineeth0791/staff
+    
+    changes in post list
+
+[33mcommit cdb12a1bb46eceb25f90ed013c3d96388e3a95d4[m
+Merge: ee7d6d5 8ad2b35
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:56:11 2019 +0530
+
+    Merge pull request #2 from vineeth0791/staff2
+    
+    new file
+
+[33mcommit 994a0dcfeb623fd08ec2fd3c446e1ac977eff36a[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:54:51 2019 +0530
+
+    changes in post list
+
+[33mcommit 8ad2b359518ce9840a88fff3c9dc6d7388f255db[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:52:44 2019 +0530
+
+    new file
+
+[33mcommit ee7d6d5e9a04d8fd0f43deba9b96538f2d897ce7[m
+Merge: e1cf18d 0aada3f
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:32:22 2019 +0530
+
+    Merge pull request #1 from vineeth0791/staff
+    
+    removed h1 properties from css
+
+[33mcommit 0aada3faadca08fcebe6803cefeb08dcd42d9410[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 15:03:44 2019 +0530
+
+    removed h1 properties from css
+
+[33mcommit e1cf18d50a682c432eaa9dd27e28fa8faa95e5ed[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 14:59:52 2019 +0530
+
+    css added style for h1
+
+[33mcommit 62be4fd3973d21e24622c490101554f6bca69321[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 14:26:16 2019 +0530
+
+    igonre
+
+[33mcommit 27e1d85d5e68d2f14092c1890421d6b6feddf375[m
+Author: vineeth0791 <vineethkumar0791@gmail.com>
+Date:   Fri Jan 4 08:40:42 2019 +0530
+
+    virtual environment recreation
+
+[33mcommit 86d9faa30f5b34d6818319e40228b60d69d96627[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Wed Jan 2 15:03:47 2019 +0530
+
+    comment model
+
+[33mcommit 70bff89900e571fe32dfb21fd1b8c5a3947afb7a[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Fri Dec 28 17:51:37 2018 +0530
+
+    security changes, add and edit forms
+
+[33mcommit e6424be84c94d43aab667d827f4cdf73be9d2fd6[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Fri Dec 28 14:00:44 2018 +0530
+
+    post detail
+
+[33mcommit b0f5806f2159244dd540f87b66e24c740ca5380b[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Fri Dec 28 10:52:29 2018 +0530
+
+    dynamic data
+
+[33mcommit c62c6e0eb0ba3118877d2ad5d35346948242abf7[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Thu Dec 27 18:19:40 2018 +0530
+
+    View file changes
+
+[33mcommit 07d7ea9f9e6c9cac72dca70c1b5169a763113097[m
+Author: vineeth <vineethkumar0791@gmail.com>
+Date:   Thu Dec 27 18:10:01 2018 +0530
+
+    home
