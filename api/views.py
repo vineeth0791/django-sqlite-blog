@@ -7,12 +7,13 @@ import json
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 # Create your views here.
-
+import json
 @api_view(['GET','POST'])
 def first(request):
 	#result = json.loads(request.body)
+	body = json.loads(request.body)
 	return JsonResponse({'request_get':request.GET,
-		'request_post':request.POST})
+		'request_post':request.POST,'request_body':body})
 	postData = Post.objects.filter(id=2)
 
 	#postData = Post.objects.all()
