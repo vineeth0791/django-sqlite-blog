@@ -3,7 +3,6 @@ from rest_framework.decorators import api_view
 import json as simplejson
 from django.http import HttpResponse,JsonResponse
 from blog.models import Post 
-import requests
 import json
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
