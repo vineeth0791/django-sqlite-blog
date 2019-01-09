@@ -3,6 +3,8 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse,JsonResponse
+from rest_framework.decorators import api_view
 
 # Create your views here.
 @login_required
@@ -84,3 +86,8 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+
+def api(request):
+	x = JsonResponse({'status': True, 'result': "Campaign already exist"})
+	return x
