@@ -13,7 +13,7 @@ def first(request):
 	#result = json.loads(request.body)
 	#body = json.loads(request.body)
 	return JsonResponse({'request_get':request.GET,
-		'request_post':request.POST})
+		'request_post':request.data})
 	postData = Post.objects.filter(id=2)
 
 	#postData = Post.objects.all()
