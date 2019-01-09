@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 @api_view(['GET','POST'])
 def first(request):
 	
-	postData = Post.objects.filter(id=request.POST.get("id"))
+	postData = Post.objects.filter(id=request.GET.get("id"))
 
 	#postData = Post.objects.all()
 	if(len(postData)>=1):
