@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 import json as simplejson
 from django.http import HttpResponse,JsonResponse
 from blog.models import Post
+from api.forms import UploadFileForm1
 import json
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
@@ -31,3 +32,11 @@ def first(request):
 
     return data
 	#return True
+
+def upload_file(request):
+    if request.method == "POST":
+        fileObj = request.FILES['file']
+        return JsonResponse({'file':fileObj.size})
+    else:
+        form = UploadFileForm1()
+        return render(request,'api/upload_file.html',{'form':form})
