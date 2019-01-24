@@ -38,5 +38,5 @@ def upload_file(request):
         fileObj = request.FILES['file']
         return JsonResponse({'file':fileObj.size})
     else:
-        form = UploadFileForm1()
-        return render(request,'api/upload_file.html',{'form':form})
+        
+        return render(request,'api/upload_file.html')
