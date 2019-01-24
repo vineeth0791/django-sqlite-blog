@@ -35,8 +35,8 @@ def first(request):
 
 def upload_file(request):
     if request.method == "POST":
-        fileObj = request.FILES['file']
-        return JsonResponse({'file':fileObj.size})
+        #fileObj = request.FILES['file']
+        return JsonResponse({'file':'fileObj.size'})
     else:
         
         return render(request,'api/upload_file.html')
