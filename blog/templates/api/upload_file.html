@@ -1,10 +1,13 @@
+{% load static %}
 <!doctype html>
 <html>
 <head>
   <title>Dropbox JavaScript SDK</title>
   <link rel="stylesheet" href="/styles.css">
   <!--<script src="/__build__/Dropbox-sdk.min.js"></script> -->
-  <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script>
+  <script src="{% static 'scripts/Dropbox-sdk.min.js' %}"></script>
+  <script data-main="scripts/main.js" src="{% static 'scripts/require.js' %}"></script>
+
 </head>
 <body>
   <!-- Example layout boilerplate -->
@@ -43,11 +46,12 @@
 
   <script>
     function uploadFile() {
-        
+
+
       const UPLOAD_FILE_SIZE_LIMIT = 150 * 1024 * 1024;
       var ACCESS_TOKEN = document.getElementById('access-token').value;
       var dbx = new Dropbox.Dropbox({ accessToken: ACCESS_TOKEN });
-     // var dbx = new Dropbox({ accessToken: ACCESS_TOKEN });
+      //var dbx = new Dropbox({ accessToken: ACCESS_TOKEN });
       var fileInput = document.getElementById('file-upload');
       var file = fileInput.files[0];
       
