@@ -36,6 +36,9 @@
     <form onSubmit="return uploadFile()">
       <input type="text" id="access-token" placeholder="Access token" />
       <input type="file" id="file-upload" />
+
+      <input type="file" id="flup" onchange="getfolder(event)" webkitdirectory directory multiple />
+
       <button type="submit">Submit</button>
     </form>
 
@@ -165,5 +168,17 @@
 
 
   </script>
+</script>
+<script type="text/javascript">
+  function getfolder(e) {
+    var files = e.target.files;
+    for(var i=0; i<files.length;i++)
+    {
+    	console.log(files[i].name+"size-"+files[i].size);
+    }
+   
+}
+</script>
+
 </body>
 </html>
