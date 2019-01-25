@@ -5,8 +5,9 @@
   <title>Dropbox JavaScript SDK</title>
   <link rel="stylesheet" href="/styles.css">
   <!--<script src="/__build__/Dropbox-sdk.min.js"></script> -->
-  <script src="{% static 'scripts/Dropbox-sdk.min.js' %}"></script>
-  <script data-main="scripts/main.js" src="{% static 'scripts/require.js' %}"></script>
+ <!-- <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script> -->
+
+  <script  src="{% static 'scripts/Dropbox-sdk.min.js' %}"></script>
 
 </head>
 <body>
@@ -58,7 +59,7 @@
       console.log("inside upload file - "+file.size);
       
       if (file.size < UPLOAD_FILE_SIZE_LIMIT) { // File is smaller than 150 Mb - use filesUpload API
-        dbx.filesUpload({path: '/' + file.name, contents: file})
+        /*dbx.filesUpload({path: '/' + file.name, contents: file})
           .then(function(response) {
             var results = document.getElementById('results');
             results.appendChild(document.createTextNode('File uploaded!'));
@@ -66,7 +67,9 @@
           })
           .catch(function(error) {
             console.error(error);
-          });
+          });*/
+         uploadViaHttp(file,ACCESS_TOKEN);
+
       } else { // File is bigger than 150 Mb - use filesUploadSession* API
         const maxBlob = 8 * 1000 * 1000; // 8Mb - Dropbox JavaScript API suggested max file / chunk size
         var workItems = [];     
@@ -79,21 +82,32 @@
         } 
           
         const task = workItems.reduce((acc, blob, idx, items) => {
+
+         
+
           if (idx == 0) {
             // Starting multipart upload of file
+            console.log("file upload session starting");
             return acc.then(function() {
               return dbx.filesUploadSessionStart({ close: false, contents: blob})
                         .then(response => response.session_id)
             });          
           } else if (idx < items.length-1) {  
             // Append part to the upload session
+            
             return acc.then(function(sessionId) {
+
+            console.log("file uploading part "+idx);
+
              var cursor = { session_id: sessionId, offset: idx * maxBlob };
              return dbx.filesUploadSessionAppendV2({ cursor: cursor, close: false, contents: blob }).then(() => sessionId); 
+
             });
           } else {
+          	
             // Last chunk of data, close session
             return acc.then(function(sessionId) {
+            	console.log("uploading last chunk");
               var cursor = { session_id: sessionId, offset: file.size - blob.size };
               var commit = { path: '/' + file.name, mode: 'add', autorename: true, mute: false };              
               return dbx.filesUploadSessionFinish({ cursor: cursor, commit: commit, contents: blob });           
@@ -111,6 +125,45 @@
       }
       return false;
     }
+
+  function uploadViaHttp(file,accessToken)
+  {
+  	var xhr = new XMLHttpRequest();
+
+		xhr.upload.onprogress = function(evt) {
+		    var percentComplete = parseInt(100.0 * evt.loaded / evt.total);
+		    // Upload in progress. Do something here with the percent complete.
+		    console.log("Percentcomplete - "+percentComplete);
+		};
+
+	xhr.onload = function() {
+	    if (xhr.status === 200) {
+	        var fileInfo = JSON.parse(xhr.response);
+	        // Upload succeeded. Do something here with the file info.
+	        console.log("uploaded - ");
+	    }
+	    else {
+	        var errorMessage = xhr.response || 'Unable to upload file';
+	        // Upload failed. Do something here with the error.
+	        console.log("unable to upload - "+errorMessage);
+	    }
+	};
+
+	xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
+	xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+
+	xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+	xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
+	    path: '/' +  file.name,
+	    mode: 'add',
+	    autorename: true,
+	    mute: false
+	}));
+
+	xhr.send(file);
+  }
+
+
   </script>
 </body>
 </html>
