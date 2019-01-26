@@ -15,12 +15,7 @@
   <header class="page-header">
     <div class="container">
       <nav>
-        <a href="/">
-          <h1>
-            <img src="https://cfl.dropboxstatic.com/static/images/brand/logotype_white-vflRG5Zd8.svg" class="logo" />
-            JavaScript SDK Examples
-          </h1>
-        </a>
+        
         <a href="https://github.com/dropbox/dropbox-sdk-js/tree/master/examples/javascript" class="view-source">View Source</a>
       </nav>
       <h2 class="code">
@@ -37,7 +32,7 @@
       <input type="text" id="access-token" placeholder="Access token" />
       <input type="file" id="file-upload" />
 
-      <input type="file" id="flup" onchange="getfolder(event)" webkitdirectory directory multiple />
+      <input type="file" id="campaign_select" onchange="getfolder(event)" webkitdirectory directory multiple />
 
       <button type="submit">Submit</button>
     </form>
@@ -170,13 +165,152 @@
   </script>
 </script>
 <script type="text/javascript">
+  var uploadFiles = [];var campaignInfoFile=null;
+  var info = null;
+  function invalidCampaign()
+  {
+    //clear global varaibales
+    clearGlobalVaribles();
+    document.getElementById('campaign_select').value='';
+      alert("Invalid campaign");
+  }
+
+  function clearGlobalVaribles()
+  {
+    uploadFiles.length =0;
+    campaignInfoFile = null;
+    info=null;
+  }
+
   function getfolder(e) {
+    clearGlobalVaribles();
+
     var files = e.target.files;
+    var path = files[0].webkitRelativePath;
+    var campaignName = (path.split("/"))[0];
+    console.log("campaignName - "+campaignName)
+    //get campaign info file
     for(var i=0; i<files.length;i++)
     {
-    	console.log(files[i].name+"size-"+files[i].size);
+      var fileNameInfo = (files[i].name).split(".");
+      console.log(fileNameInfo[0]+"size-"+files[i].size+"extension"+fileNameInfo[fileNameInfo.length-1].toUpperCase());
+      if(fileNameInfo[0] == campaignName && 
+        (fileNameInfo[fileNameInfo.length-1].toUpperCase() === "TXT"))
+      {
+        campaignInfoFile = files[i];
+        break;
+      }
+    	
     }
-   
+
+    if(campaignInfoFile==null)
+    {
+      invalidCampaign();
+    }else
+    {
+      //read info file 
+     readTextFile(campaignInfoFile);
+    }
+
+   function readTextFile(file)
+{
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+     info = reader.result;
+     console.log("info --"+info);
+     checkForCorrectInfoFile(info);
+    }
+
+    reader.readAsText(file);    
+}
+
+function checkForCorrectInfoFile(result)
+{
+  try
+  {
+    var resultJSON = JSON.parse(result);
+    if(resultJSON.hasOwnProperty("type"))
+    {
+      console.log("success");
+      //success,, prepare uploadable files
+      var type = resultJSON.type;
+      if(type == "multi_region")
+      {
+         //process multi region files and add to list
+         processMultiRegFilesToUpload(resultJSON.regions);
+      }else
+      {
+        addForRegion(resultJSON,"Single");
+      }
+      
+      //check for bg audio file
+      if(resultJSON.hasOwnProperty("bg_audio"))
+      {
+        uploadFiles.push(resultJSON.bg_audio);
+      }
+
+      verifyAndPrepareUploadFiles();
+      console.log("total uploadable files - "+uploadFiles.length);
+       
+    }else
+    {
+      invalidCampaign();
+    }
+  }catch(err)
+  {
+    console.log(err.message);
+     invalidCampaign();
+  }
+}
+
+function processMultiRegFilesToUpload(regions)
+{
+  for(var i=0;i<regions.length;i++){
+    addForRegion(regions[i],"multi");
+  }
+}
+
+function addForRegion(region,type)
+{
+  if(region.type != "text" && region.type != "Url")
+  {
+    if(type=="Single")
+    {
+     uploadFiles.push(region.resource);
+    }else
+    {
+      uploadFiles.push(region.media_name);
+    }
+     
+  }
+}
+ 
+ function verifyAndPrepareUploadFiles()
+ {
+   var tempUploadFiles = uploadFiles;
+   uploadFiles = [];
+   var selectedFiles = Object.values((document.getElementById('campaign_select').files));
+  
+   for(var i=0;i<tempUploadFiles.length;i++)
+   {
+     var tempFileName = tempUploadFiles[i];
+     //iterate through the selected files to check for the origin file
+     for(var j=0;j<selectedFiles.length;j++)
+     {
+       if(tempFileName == selectedFiles[j].name)
+       {
+        //remove the file from selected, so it wont come in next iterate ,, before that add to upload files
+         uploadFiles.push(selectedFiles[j]);
+         //selectedFiles.splice(j,1);
+         break;
+       }
+     }
+   }
+
+   //at the end add info file 
+  uploadFiles.push(campaignInfoFile);
+ } 
 }
 </script>
 
